@@ -19,4 +19,6 @@ public class Student extends Person{
     public void setScholarship(double scholarship) {
         this.scholarship = scholarship;
     }
+
+
 }
