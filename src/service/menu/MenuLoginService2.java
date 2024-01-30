@@ -9,7 +9,7 @@ public class MenuLoginService2 implements MenuLoginServiceInter {
     }
 
     @Override
-    public void process() {
+    public void processLogic() {
         System.out.println("login");
     }
 }

@@ -1,4 +1,4 @@
 package service.inter;
 
-public interface MenuShowStudentInter extends MenuService{
+public interface MenuShowStudentInter extends Process {
 }

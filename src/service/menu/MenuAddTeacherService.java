@@ -11,7 +11,7 @@ import java.util.TreeMap;
 
 public class MenuAddTeacherService implements MenuAddTeacherInter {
     @Override
-    public void process() {
+    public void processLogic() {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter name:");
         String name = sc.nextLine();

@@ -1,12 +1,28 @@
 package bean;
 
+import util.FileUtility;
+
 import java.io.Serializable;
 
 public class Config implements Serializable {
     private static Config config = null;
+    private static final String fileName="app.obj";
     private Student[] students = new Student[0];
     private Teacher[] teachers = new Teacher[0];
     private static boolean loggedIn;
+    public static void initialize(){
+        Object obj= FileUtility.readFileDeserialize(fileName);
+        if(obj==null){
+            return;
+        }
+        if(obj instanceof Config){
+            config=(Config)obj;
+        }
+    }
+    public static void save(){
+        FileUtility.writeObjectToFile(Config.instance(), fileName);
+    }
+
 
     public Student[] getStudents() {
         return students;

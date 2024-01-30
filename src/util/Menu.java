@@ -1,11 +1,8 @@
 package util;
 
 import bean.Config;
-import service.MenuLogin;
 import service.menu.*;
-import service.inter.MenuService;
-
-import java.io.ObjectInputFilter;
+import service.inter.Process;
 
 public enum Menu {
     LOGIN(1, "Login", new MenuLoginService()),
@@ -17,13 +14,13 @@ public enum Menu {
     UNKNOWN;
     private int number;
     private String label;
-    private MenuService service;
+    private Process service;
 
 
     Menu() {
     }
 
-    Menu(int number, String label, MenuService service) {
+    Menu(int number, String label, Process service) {
         this.label = label;
         this.number = number;
         this.service = service;
@@ -61,26 +58,21 @@ public enum Menu {
         return Menu.UNKNOWN;
     }
 
-    public static void showAllMenu() {
 
+    public static void showAllMenu() {
         Menu[] menus = Menu.values();
-        for (int i = 0; i < menus.length; i++) {
-            if (menus[i] != UNKNOWN) {
-                if (menus[i] == LOGIN || menus[i] == REGISTER) {
-                    if
-                    (!Config.isLoggedIn()) {
-                        System.out.println(menus[i]);
-                    } else if
-                    (Config.isLoggedIn()) {
+       for(int i=0; i<menus.length; i++){
+            if (menus[i]!= UNKNOWN) {
+                if (menus[i]==LOGIN||menus[i]==REGISTER) {
+                    if(!Config.isLoggedIn()){
                         System.out.println(menus[i]);
                     }
 
+                } else if (Config.isLoggedIn()) {
+
+                    System.out.println(menus[i]);
                 }
-
-
             }
         }
-
     }
 }
-

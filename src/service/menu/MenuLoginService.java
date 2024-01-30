@@ -11,7 +11,7 @@ public class MenuLoginService implements MenuLoginServiceInter {
     }
 
     @Override
-    public void process() {
+    public void processLogic() {
         Scanner sc =new Scanner(System.in);
         System.out.println("Enter your username");
         String username =sc.nextLine();

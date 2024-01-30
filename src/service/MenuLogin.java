@@ -1,8 +1,6 @@
 package service;
 
 import service.inter.MenuLoginServiceInter;
-import service.inter.MenuService;
-import service.menu.MenuLoginService;
 
 public class MenuLogin implements MenuLoginServiceInter {
     @Override
@@ -11,7 +9,7 @@ public class MenuLogin implements MenuLoginServiceInter {
     }
 
     @Override
-    public void process() {
+    public void processLogic() {
 
     }
 }

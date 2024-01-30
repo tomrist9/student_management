@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class MenuAddStudentsService implements MenuAddStudentServiceInter {
     @Override
-    public void process() {
+    public void processLogic() {
         Scanner sc=new Scanner(System.in);
         System.out.println("enter name:");
         String name=sc.nextLine();
@@ -22,6 +22,6 @@ public class MenuAddStudentsService implements MenuAddStudentServiceInter {
 
         Config.instance().appendStudent(s);
         System.out.println("The student has been added");
-        File
+
     }
 }

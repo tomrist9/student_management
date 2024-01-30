@@ -6,7 +6,7 @@ import service.inter.MenuShowStudentInter;
 
 public class MenuShowStudentService implements MenuShowStudentInter {
     @Override
-    public void process() {
+    public void processLogic() {
         Student []allStudent= Config.instance().getStudents();
         for(int i=0; i< allStudent.length;i++){
             System.out.println(allStudent[i]);
